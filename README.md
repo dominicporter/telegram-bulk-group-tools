@@ -4,6 +4,7 @@ TELEGRAM Scraping Software and Create Group
 Using this Software you can Scrape all member data in any groups 
 
 Setup API
+
 Go to http://my.telegram.org and log in.
 Click on API development tools and fill the required fields.
 put app name you want & select other in platform Example :
@@ -27,4 +28,4 @@ Send Bulk sms To Collected Data
 $ python3 smsbot.py members.csv
 
 add users to your group
-$ python3 add2group.py members.csv
+$ python3 Addintogroup.py
