@@ -1,17 +1,19 @@
-# IITDEVELOPER-Telegram
-TELEGRAM Scraping Software and Create Group 
+# Telegram Bulk Group Generation
 
-Using this Software you can Scrape all member data in any groups 
+These scripts use the API TO:
+- scrap all the users from one of your groups to a csv file
+- generate many telegram groups with the initial user list as admins
+- delete the groups when you are done with them (TODO)
 
-Setup API
+## Setup API
 
 Go to http://my.telegram.org and log in.
 Click on API development tools and fill the required fields.
 put app name you want & select other in platform Example :
 copy "api_id" & "api_hash" after clicking create app ( will be used in setup.py )
 
-
-• How To Install
+## How To Install
+```
 $ pkg install -y git python
 
 $ git clone https://github.com/iitdevelopergithub/IITDEVELOPER-Telegram.git
@@ -20,12 +22,23 @@ $ cd TeleGram-Scraper
 
 $ chmod +x * && python3 setup.py
 
-To Genrate User Data
+$ python3 setup.py
+```
+
+
+## To Generate User Data
+```
 $ python3 scrapr.py
+```
 
-( members.csv is default if you changed name use it )
-Send Bulk sms To Collected Data
-$ python3 smsbot.py members.csv
+## Creating your groups
+- Edit `BulkCreateGroups.py` to use your own Team Names etc
 
-add users to your group
-$ python3 Addintogroup.py
+```
+$ python3 BulkCreateGroups.py
+```
+
+- This will put the names and Ids of all the groups into `createdGroups.csv` (for later use when deleting)
+
+## Deleting the groups
+- TODO
