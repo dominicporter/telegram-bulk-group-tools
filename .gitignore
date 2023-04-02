@@ -1,0 +1,6 @@
+*.session
+config.data
+members.csv
+createdGroups.csv
+.vscode/settings.json
+teamNames.txt
