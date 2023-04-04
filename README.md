@@ -16,9 +16,9 @@ copy "api_id" & "api_hash" after clicking create app ( will be used in setup.py 
 ```
 $ pkg install -y git python
 
-$ git clone https://github.com/iitdevelopergithub/IITDEVELOPER-Telegram.git
+$ git clone https://github.com/dominicporter/telegram-bulk-group-tools
 
-$ cd TeleGram-Scraper
+$ cd telegram-bulk-group-tools
 
 $ chmod +x * && python3 setup.py
 
@@ -28,7 +28,7 @@ $ python3 setup.py
 
 ## To Generate User Data
 ```
-$ python3 scrapr.py
+$ python3 scraper.py
 ```
 
 ## Creating your groups
