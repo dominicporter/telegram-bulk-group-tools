@@ -41,4 +41,8 @@ $ python3 BulkCreateGroups.py
 - This will put the names and Ids of all the groups into `createdGroups.csv` (for later use when deleting)
 
 ## Deleting the groups
-- TODO
+- Make sure you have the groups to be deleted in `createdGroups.csv`
+
+```
+$ python3 BulkDeleteGroups.py
+```
