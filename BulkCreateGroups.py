@@ -64,11 +64,6 @@ def createGroup(groupName):
     )
     chat = result.chats[0]
 
-    # Write chat details to file
-    with open("createdGroups.csv", "a", encoding="UTF-8") as f:
-        writer = csv.writer(f, delimiter=",", lineterminator="\n")
-        writer.writerow([chat.id, chat.title])
-
     # Set some permissions for all
     client.edit_permissions(chat, invite_users=True, change_info=False)
 
@@ -80,6 +75,12 @@ def createGroup(groupName):
             request_needed=True,
         )
     ).link
+
+    # Write chat details to file
+    with open("createdGroups.csv", "a", encoding="UTF-8") as f:
+        writer = csv.writer(f, delimiter=",", lineterminator="\n")
+        writer.writerow([chat.id, chat.access_hash, chat.title, inviteLink])
+
     result = client(EditChatAboutRequest(peer=chat, about="Invite Link: " + inviteLink))
 
     # Give admin to all users in members.csv
@@ -101,7 +102,10 @@ with open(r"teamNames.txt", encoding="UTF-8") as f:  # Enter your file name
 
 # This will generate one group for each name and each prefix, so if there are 100 groupNames and 4 prefixes, it will make 400 groups
 prefixes = ["Fri", "Sat", "Sun", "Mon"]
-suffix = "The End Bit"
-for prefix in prefixes:
-    for name in groupNames:
-        createGroup(prefix + " " + name + " " + suffix)
+suffix = "TBOStwds"
+for name in groupNames:
+    for prefix in prefixes:
+        groupName = prefix + " " + name + " " + suffix
+        createGroup(groupName)
+        # print(groupName) # Dry run
+        time.sleep(60)
